@@ -22,8 +22,8 @@ class MessagesController
      */
     public function __construct()
     {
-        TWIG->addPath('vendor/tigress/messages/src/views');
-        TRANSLATIONS->load(SYSTEM_ROOT . '/vendor/tigress/messages/translations/translations.json');
+        TWIG->addPath('vendor/tigress/website_messages/src/views');
+        TRANSLATIONS->load(SYSTEM_ROOT . '/vendor/tigress/website_messages/translations/translations.json');
     }
 
     /**

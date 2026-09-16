@@ -1,5 +1,5 @@
 {
-  "name": "tigress/messages",
+  "name": "tigress/website-messages",
   "description": "A Tigress module to manage messages that show on certain pages of the website.",
   "type": "library",
   "license": "GPL-3.0-or-later",
