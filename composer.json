@@ -1,0 +1,30 @@
+{
+  "name": "tigress/messages",
+  "description": "A Tigress module to manage messages that show on certain pages of the website.",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Rudy Mas",
+      "email": "rudy.mas@rudymas.be",
+      "homepage": "https://rudymas.be",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.5"
+  },
+  "require-dev": {
+    "tigress/core": "*",
+    "tigress/users": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tigress\\": "src/",
+      "Controller\\": "src/controllers",
+      "Repository\\": "src/repositories",
+      "Service\\": "src/services"
+    }
+  }
+}

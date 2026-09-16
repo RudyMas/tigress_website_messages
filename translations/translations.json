@@ -1,0 +1,26 @@
+{
+  "nl": {
+    "Add Message": "Bericht toevoegen",
+    "Messages": "Berichten"
+  },
+  "fr": {
+    "Add Message": "Ajouter un message",
+    "Messages": "Messages"
+  },
+  "de": {
+    "Add Message": "Nachricht hinzufügen",
+    "Messages": "Nachrichten"
+  },
+  "es": {
+    "Add Message": "Agregar mensaje",
+    "Messages": "Mensajes"
+  },
+  "it": {
+    "Add Message": "Aggiungi messaggio",
+    "Messages": "Messaggi"
+  },
+  "sv": {
+    "Add Message": "Lägg till meddelande",
+    "Messages": "Meddelanden"
+  }
+}

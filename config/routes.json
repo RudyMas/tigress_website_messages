@@ -1,0 +1,15 @@
+{
+  "routes": [
+    {
+      "request": "GET",
+      "path": "/messages",
+      "controller": "messages\\MessagesController",
+      "method": "index",
+      "level_rights": [
+        100
+      ],
+      "special_rights": "tigress_messages",
+      "special_rights_default": []
+        }
+  ]
+}
