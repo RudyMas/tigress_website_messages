@@ -1,0 +1,117 @@
+{% extends 'base.twig' %}
+{% block js %}
+    {{ parent() }}
+    <script src="{{ BASE_URL }}/node_modules/tinymce/tinymce.min.js"></script>
+    <script src="{{ BASE_URL }}/node_modules/tinymce/themes/silver/theme.min.js"></script>
+    <script src="{{ BASE_URL }}/vendor/tigress/website-messages/public/javascript/website_messages/edit.js"></script>
+{% endblock %}
+{% block title %}{{ __('Website Messages') }} - {{ actionButton }}{% endblock %}
+{% block breadcrumb %}
+    <div class="row mb-2">
+        <div class="col-sm-12">
+            <nav aria-label="breadcrumb" data-bs-theme="dark">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ BASE_URL }}/home"><i class="fa fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a
+                                href="{{ BASE_URL }}/website-messages">{{ __('Website Messages') }}</a></li>
+                    <li class="breadcrumb-item active">{{ actionButton }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h3>{{ __('Website Messages') }} - {{ actionButton }}</h3>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <form id="websiteMessagesForm" method="post" action="{{ BASE_URL }}/website-messages/save">
+                    <fieldset>
+                        <div class="row mb-2">
+                            <div class="col-sm-12">
+                                <input type="hidden" name="id" value="{{ websiteMessage.id }}">
+                                <div class="mb-3">
+                                    <label for="url_location" class="form-label">{{ __('Page URL') }} <i
+                                                style="font-size: 0.8em">(/page/sub-page/*/action =>
+                                            * {{ __('can be anything') }})</i></label>
+                                    <input type="text" class="form-control" id="url_location" name="url_location"
+                                           value="{{ websiteMessage.url_location }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">{{ __('Title') }}</label>
+                                    <input type="text" class="form-control" id="title" name="title"
+                                           value="{{ websiteMessage.title }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">{{ __('Message') }}</label>
+                                    <textarea class="form-control" id="message"
+                                              name="message">{{ websiteMessage.message }}</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="type" class="form-label">{{ __('Type') }}</label>
+                                            <select class="form-select" id="type" name="type">
+                                                <option value="info"
+                                                        {% if websiteMessage.type == 'info' %}selected{% endif %}>{{ __('Info') }}</option>
+                                                <option value="success"
+                                                        {% if websiteMessage.type == 'success' %}selected{% endif %}>{{ __('Success') }}</option>
+                                                <option value="warning"
+                                                        {% if websiteMessage.type == 'warning' %}selected{% endif %}>{{ __('Warning') }}</option>
+                                                <option value="danger"
+                                                        {% if websiteMessage.type == 'danger' %}selected{% endif %}>{{ __('Danger') }}</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="display" class="form-label">{{ __('Display') }}</label>
+                                            <select class="form-select" id="display" name="display">
+                                                <option value="page-top"
+                                                        {% if websiteMessage.display == 'page-top' %}selected{% endif %}>{{ __('Top') }}</option>
+                                                <option value="page-bottom"
+                                                        {% if websiteMessage.display == 'page-bottom' %}selected{% endif %}>{{ __('Bottom') }}</option>
+                                                <option value="popup"
+                                                        {% if websiteMessage.display == 'popup' %}selected{% endif %}>{{ __('Popup') }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="active_from" class="form-label">{{ __('From') }}</label>
+                                            <input type="datetime-local" class="form-control" id="active_from"
+                                                   name="active_from"
+                                                   value="{{ websiteMessage.active_from }}" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="active_until" class="form-label">{{ __('Until') }}</label>
+                                            <input type="datetime-local" class="form-control" id="active_until"
+                                                   name="active_until"
+                                                   value="{{ websiteMessage.active_until }}" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="active" class="form-label">{{ __('Status') }}</label>
+                                    <select class="form-select" id="active" name="active">
+                                        <option value="1"
+                                                {% if websiteMessage.active == '1' %}selected{% endif %}>{{ __('Active') }}</option>
+                                        <option value="0"
+                                                {% if websiteMessage.active == '0' %}selected{% endif %}>{{ __('Inactive') }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> {{ __('Save') }}</button>
+                    <a href="{{ BASE_URL }}/website-messages" class="btn btn-danger"><i
+                                class="fa fa-times"></i> {{ __('Cancel') }}</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

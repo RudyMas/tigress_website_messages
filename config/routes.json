@@ -3,13 +3,49 @@
     {
       "request": "GET",
       "path": "/website-messages",
-      "controller": "messages\\WebsiteMessagesController",
+      "controller": "website_messages\\WebsiteMessagesController",
       "method": "index",
       "level_rights": [
         100
       ],
-      "special_rights": "tigress_messages",
+      "special_rights": "tigress_website-messages",
       "special_rights_default": []
-        }
+    },
+    {
+      "request": "GET",
+      "path": "/website-messages/archive/{id}",
+      "controller": "website_messages\\WebsiteMessagesCrudController",
+      "method": "archive"
+    },
+    {
+      "request": "GET",
+      "path": "/website-messages/delete/{id}",
+      "controller": "website_messages\\WebsiteMessagesCrudController",
+      "method": "delete"
+    },
+    {
+      "request": "GET",
+      "path": "/website-messages/edit/{id}",
+      "controller": "website_messages\\WebsiteMessagesController",
+      "method": "edit"
+    },
+    {
+      "request": "GET",
+      "path": "/website-messages/get-data/{show}",
+      "controller": "website_messages\\WebsiteMessagesCrudController",
+      "method": "getData"
+    },
+    {
+      "request": "GET",
+      "path": "/website-messages/restore/{id}",
+      "controller": "website_messages\\WebsiteMessagesCrudController",
+      "method": "restore"
+    },
+    {
+      "request": "POST",
+      "path": "/website-messages/save",
+      "controller": "website_messages\\WebsiteMessagesCrudController",
+      "method": "save"
+    }
   ]
 }

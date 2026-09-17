@@ -22,8 +22,13 @@ class WebsiteMessagesController
      */
     public function __construct()
     {
-        TWIG->addPath('vendor/tigress/website_messages/src/views');
-        TRANSLATIONS->load(SYSTEM_ROOT . '/vendor/tigress/website_messages/translations/translations.json');
+        if (RIGHTS->checkRights() === false) {
+            $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+            TWIG->redirect('/login');
+        }
+
+        TWIG->addPath('vendor/tigress/website-messages/src/views');
+        TRANSLATIONS->load(SYSTEM_ROOT . '/vendor/tigress/website-messages/translations/translations.json');
     }
 
     /**
@@ -37,10 +42,37 @@ class WebsiteMessagesController
     public function index(): void
     {
         if (RIGHTS->checkRights() === false) {
-            $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+            $_SESSION['error'] = 'U hebt niet de nodige rechten om deze pagina te bekijken.';
             TWIG->redirect('/login');
         }
 
-        TWIG->render('under_construction.twig');
+        TWIG->render('website_messages/index.twig');
+    }
+
+    /**
+     * Edit or create a website message.
+     *
+     * @throws RuntimeError
+     * @throws SyntaxError
+     * @throws LoaderError
+     */
+    public function edit(array $args): void
+    {
+        if (RIGHTS->checkRights() === false) {
+            $_SESSION['error'] = 'U hebt niet de nodige rechten om deze pagina te bekijken.';
+            TWIG->redirect('/login');
+        }
+
+        $websiteMessagesRepo = new \Repository\WebsiteMessagesRepo();
+        $websiteMessagesRepo->loadById($args['id']);
+        if ($websiteMessagesRepo->isEmpty()) {
+            $websiteMessagesRepo->new();
+        }
+        $websiteMessage = $websiteMessagesRepo->current();
+
+        TWIG->render('website_messages/edit.twig', [
+            'actionButton' => $websiteMessagesRepo->isEmpty() ? __('Add') : __('Edit'),
+            'websiteMessage' => $websiteMessage,
+        ]);
     }
 }
