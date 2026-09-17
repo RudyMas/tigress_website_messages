@@ -16,8 +16,7 @@
     "php": ">=8.5"
   },
   "require-dev": {
-    "tigress/core": "*",
-    "tigress/users": "*"
+    "tigress/core": "*"
   },
   "autoload": {
     "psr-4": {

@@ -1,21 +1,21 @@
 <?php
 
-namespace Controller\messages;
+namespace Controller\website_messages;
 
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 
 /**
- * Class MessagesController (PHP version 8.5)
+ * Class WebsiteMessagesController (PHP version 8.5)
  *
  * @author Rudy Mas <rudy.mas@rudymas.be>
  * @copyright 2026 Rudy Mas (https://rudymas.be)
  * @license https://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3 (GPL-3.0)
  * @version 2026.09.16.0
- * @package Controller\MessagesController
+ * @package Controller\WebsiteMessagesController
  */
-class MessagesController
+class WebsiteMessagesController
 {
     /**
      * @throws LoaderError

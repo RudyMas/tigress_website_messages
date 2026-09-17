@@ -2,8 +2,8 @@
   "routes": [
     {
       "request": "GET",
-      "path": "/messages",
-      "controller": "messages\\MessagesController",
+      "path": "/website-messages",
+      "controller": "messages\\WebsiteMessagesController",
       "method": "index",
       "level_rights": [
         100
