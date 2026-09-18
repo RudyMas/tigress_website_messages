@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         language_url: tigress.languageTinymce.url,
         language: tigress.languageTinymce.lang,
         paste_data_images: true,
-        height: 500,
+        height: 250,
         plugins: ['lists', 'code', 'image', 'link'],
         toolbar: "bullist numlist fontfamily fontsize bold italic underline forecolor insertfile image link code",
         images_upload_url: script_upload_image,
