@@ -35,6 +35,11 @@
                             <div class="col-sm-12">
                                 <input type="hidden" name="id" value="{{ websiteMessage.id }}">
                                 <div class="mb-3">
+                                    <label for="page" class="form-label">{{ __('Page') }}</label>
+                                    <input type="text" class="form-control" id="page" name="page"
+                                           value="{{ websiteMessage.page }}" required>
+                                </div>
+                                <div class="mb-3">
                                     <label for="url_location" class="form-label">{{ __('Page URL') }} <i
                                                 style="font-size: 0.8em">(/page/sub-page/*/action =>
                                             * {{ __('can be anything') }})</i></label>
@@ -64,6 +69,8 @@
                                                         {% if websiteMessage.type == 'warning' %}selected{% endif %}>{{ __('Warning') }}</option>
                                                 <option value="danger"
                                                         {% if websiteMessage.type == 'danger' %}selected{% endif %}>{{ __('Danger') }}</option>
+                                                <option value="light"
+                                                        {% if websiteMessage.type == 'light' %}selected{% endif %}>{{ __('Light') }}</option>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
@@ -85,13 +92,13 @@
                                             <label for="active_from" class="form-label">{{ __('From') }}</label>
                                             <input type="datetime-local" class="form-control" id="active_from"
                                                    name="active_from"
-                                                   value="{{ websiteMessage.active_from }}" required>
+                                                   value="{{ websiteMessage.active_from }}">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="active_until" class="form-label">{{ __('Until') }}</label>
                                             <input type="datetime-local" class="form-control" id="active_until"
                                                    name="active_until"
-                                                   value="{{ websiteMessage.active_until }}" required>
+                                                   value="{{ websiteMessage.active_until }}">
                                         </div>
                                     </div>
                                 </div>

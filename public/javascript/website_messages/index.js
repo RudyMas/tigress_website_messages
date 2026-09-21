@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     width: '1%'
                 },
                 {
-                    title: __('Page URL'),
-                    data: 'url_location',
+                    title: __('Page'),
+                    data: 'page',
                     className: 'text-nowrap text-middle',
                     width: '1%'
                 },

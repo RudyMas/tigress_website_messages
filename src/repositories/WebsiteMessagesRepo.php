@@ -18,10 +18,11 @@ class WebsiteMessagesRepo extends Repository
             'table' => "
                 CREATE TABLE {$this->table} (
                   `id` int NOT NULL,
+                  `page` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
                   `url_location` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
                   `title` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
                   `message` text COLLATE utf8mb4_general_ci NOT NULL,
-                  `type` enum('info','success','warning','danger') COLLATE utf8mb4_general_ci NOT NULL,
+                  `type` enum('info','success','warning','danger', 'light') COLLATE utf8mb4_general_ci NOT NULL,
                   `display` enum('page-top','page-bottom','popup','') COLLATE utf8mb4_general_ci NOT NULL,
                   `active_from` timestamp NOT NULL,
                   `active_until` timestamp NOT NULL,
