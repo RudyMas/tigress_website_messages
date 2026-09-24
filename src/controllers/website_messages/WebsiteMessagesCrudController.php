@@ -5,7 +5,6 @@ namespace Controller\website_messages;
 use JetBrains\PhpStorm\NoReturn;
 use Repository\WebsiteMessagesRepo;
 use Throwable;
-use Tigress\Core;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -14,8 +13,8 @@ use Twig\Error\SyntaxError;
  * Class WebsiteMessagesCrudController (PHP version 8.5)
  *
  * @author Rudy Mas <rudy.mas@rudymas.be>
- * @copyright 2026 Rudy Mas (https://rudymas.be)
- * @license https://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3 (GPL-3.0)
+ * @copyright 2026 Rudy Mas (https://www.rudymas.be)
+ * @license Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
  * @version 2026.09.17.0
  * @package Controller\WebsiteMessagesCrudController
  */

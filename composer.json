@@ -2,12 +2,12 @@
   "name": "tigress/website-messages",
   "description": "A Tigress module to manage messages that show on certain pages of the website.",
   "type": "library",
-  "license": "GPL-3.0-or-later",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Rudy Mas",
       "email": "rudy.mas@rudymas.be",
-      "homepage": "https://rudymas.be",
+      "homepage": "https://www.rudymas.be",
       "role": "Developer"
     }
   ],
